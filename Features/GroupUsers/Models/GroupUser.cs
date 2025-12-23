@@ -13,10 +13,11 @@ public sealed class GroupUser : Entity
     public Group? Group { get; private set; }
     public User? User { get; private set; }
 
-    public GroupUser(Guid userId, Guid groupId)
+    public GroupUser(Guid userId, Guid groupId, int role)
     {
         UserId = userId;
         GroupId = groupId;
+        Role = (ERole)role;
     }
 
     public GroupUser(Guid id, Guid userId, Guid groupId, int role) : base(id)
