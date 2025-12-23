@@ -1,6 +1,8 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Projexor.Data.Context;
 using Projexor.Services;
@@ -33,6 +35,8 @@ public static partial class Inject
             var conn = builder.Configuration.GetConnectionString("Default");
 
             builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(conn));
+
+            builder.Services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
             if (builder.Environment.IsDevelopment())
             {
