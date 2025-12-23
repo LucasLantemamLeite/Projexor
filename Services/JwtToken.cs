@@ -1,4 +1,5 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Stokify.Features.Users.Models;
@@ -23,6 +24,8 @@ public static class JwtToken
             {
                 SigningCredentials = credenctial,
                 Expires = DateTime.UtcNow.AddHours(4),
+
+                Subject = new ClaimsIdentity([new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())])
             };
 
             var token = tokenHandler.CreateToken(descriptor);
