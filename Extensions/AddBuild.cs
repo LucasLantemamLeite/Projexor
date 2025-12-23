@@ -1,4 +1,7 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Stokify.Data.Context;
 using Stokify.Services;
 
@@ -10,6 +13,22 @@ public static partial class Inject
     {
         public WebApplicationBuilder AddBuild()
         {
+            builder.Services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x => x.TokenValidationParameters = new()
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtToken.Key)),
+                ValidateLifetime = true,
+                ValidateAudience = false,
+                ValidateIssuer = false,
+                ClockSkew = TimeSpan.Zero
+            });
+
+            builder.Services.AddAuthorization();
+
             JwtToken.Key = builder.Configuration.GetValue<string>("JwtToken") ?? throw new NullReferenceException("");
             var conn = builder.Configuration.GetConnectionString("Default");
 
