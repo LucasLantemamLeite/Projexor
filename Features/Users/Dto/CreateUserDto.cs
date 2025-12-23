@@ -5,7 +5,7 @@ namespace Projexor.Features.Users.Dto;
 public sealed record CreateUserDto
 {
     [Required(ErrorMessage = "Name is required.")]
-    [MaxLength(100, ErrorMessage = "Name must be between 3 and 100 characters.")]
+    [MaxLength(100, ErrorMessage = "Name must be between and 100 characters.")]
     public required string Name { get; init; }
 
     [Required(ErrorMessage = "Email address is required.")]
