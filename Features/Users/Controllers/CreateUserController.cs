@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stokify.Data.Context;
@@ -9,10 +10,11 @@ using Stokify.Services;
 namespace Stokify.Features.Users.Controllers;
 
 [ApiController]
-[Route("v1/users")]
+[Route("v1/user/create")]
 [Tags("Users")]
 public sealed class CreateUserController(AppDbContext context) : ControllerBase
 {
+    [AllowAnonymous]
     [HttpPost]
     public async Task<IActionResult> ExecuteAsync([FromBody] CreateUserDto createDto, CancellationToken cancellationToken = default)
     {
