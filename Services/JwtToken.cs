@@ -11,7 +11,7 @@ public static class JwtToken
 
     extension(User user)
     {
-        public static string GenerateToken()
+        public string GenerateToken()
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
