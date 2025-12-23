@@ -11,7 +11,7 @@ namespace Stokify.Features.Users.Controllers;
 
 [ApiController]
 [Route("v1/user/create")]
-[Tags("Users")]
+[Tags("Create")]
 public sealed class CreateUserController(AppDbContext context) : ControllerBase
 {
     [AllowAnonymous]
@@ -19,13 +19,13 @@ public sealed class CreateUserController(AppDbContext context) : ControllerBase
     public async Task<IActionResult> ExecuteAsync([FromBody] CreateUserDto createDto, CancellationToken cancellationToken = default)
     {
         if (!ModelState.IsValid)
-            return BadRequest(ModelState);
+            return UnprocessableEntity(ModelState);
 
         if (await context.Users.AnyAsync(x => x.Email == createDto.Email, cancellationToken))
-            return BadRequest(new { message = "This email address is already registered." });
+            return Conflict(new { message = "This email address is already registered." });
 
         if (await context.Users.AnyAsync(x => x.Phone == createDto.Phone, cancellationToken))
-            return BadRequest(new { message = "This phone number is already registered." });
+            return Conflict(new { message = "This phone number is already registered." });
 
         var user = new User(
             name: createDto.Name,
