@@ -6,4 +6,6 @@ builder.AddBuild();
 
 var app = builder.Build();
 
+app.AddApp();
+
 app.Run();
