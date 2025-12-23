@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Konscious.Security.Cryptography;
 
-namespace Stokify.Features.Users.Auth;
+namespace Projexor.Features.Users.Auth;
 
 public static class Hasher
 {

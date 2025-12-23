@@ -1,4 +1,4 @@
-namespace Stokify.Middlewares;
+namespace Projexor.Middlewares;
 
 public sealed class ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
 {

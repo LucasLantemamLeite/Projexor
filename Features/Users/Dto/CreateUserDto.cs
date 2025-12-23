@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Stokify.Features.Users.Dto;
+namespace Projexor.Features.Users.Dto;
 
 public sealed record CreateUserDto
 {

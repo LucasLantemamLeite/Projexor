@@ -1,12 +1,12 @@
-using Stokify.Features.Projects.Enums;
-using Stokify.Shared.Base;
+using Projexor.Features.Projects.Enums;
+using Projexor.Shared.Base;
 
-namespace Stokify.Features.Projects.Models;
+namespace Projexor.Features.Projects.Models;
 
 public sealed class Project : Entity
 {
     public string Name { get; private set; } = null!;
-    public EStatus Status { get; private set; } =  EStatus.InProgress;
+    public EStatus Status { get; private set; } = EStatus.InProgress;
     public DateTime? CompleteDate { get; private set; }
     public Guid? UserId { get; private set; }
     public Guid? GroupId { get; private set; }
@@ -20,7 +20,7 @@ public sealed class Project : Entity
         UserId = userId;
         GroupId = groupId;
     }
-    
+
     public Project(Guid id, string name, int status, DateTime? completeDate, Guid? userId, Guid? groupId, DateTime created) : base(id)
     {
         Name = name;
@@ -30,6 +30,6 @@ public sealed class Project : Entity
         GroupId = groupId;
         CreatedAt = created;
     }
-    
-    private Project() {}
+
+    private Project() { }
 }

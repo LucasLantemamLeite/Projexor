@@ -1,8 +1,8 @@
-using Stokify.Features.GroupUsers.Models;
-using Stokify.Features.Projects.Models;
-using Stokify.Shared.Base;
+using Projexor.Features.GroupUsers.Models;
+using Projexor.Features.Projects.Models;
+using Projexor.Shared.Base;
 
-namespace Stokify.Features.Users.Models;
+namespace Projexor.Features.Users.Models;
 
 public sealed class User : Entity
 {

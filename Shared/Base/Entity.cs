@@ -1,4 +1,4 @@
-namespace Stokify.Shared.Base;
+namespace Projexor.Shared.Base;
 
 public abstract class Entity
 {

@@ -2,10 +2,10 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Stokify.Data.Context;
-using Stokify.Services;
+using Projexor.Data.Context;
+using Projexor.Services;
 
-namespace Stokify.Extensions;
+namespace Projexor.Extensions;
 
 public static partial class Inject
 {

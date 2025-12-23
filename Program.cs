@@ -1,4 +1,4 @@
-using Stokify.Extensions;
+using Projexor.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

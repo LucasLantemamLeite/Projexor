@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Stokify.Data.Context;
-using Stokify.Features.Users.Auth;
-using Stokify.Features.Users.Dto;
-using Stokify.Features.Users.Models;
-using Stokify.Services;
+using Projexor.Data.Context;
+using Projexor.Features.Users.Auth;
+using Projexor.Features.Users.Dto;
+using Projexor.Features.Users.Models;
+using Projexor.Services;
 
-namespace Stokify.Features.Users.Controllers;
+namespace Projexor.Features.Users.Controllers;
 
 [ApiController]
 [Route("v1/user/create")]

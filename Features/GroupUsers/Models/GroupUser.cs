@@ -1,9 +1,9 @@
-using Stokify.Features.Groups.Models;
-using Stokify.Features.Users.Models;
-using Stokify.Shared.Base;
-using Stokify.Shared.Enums;
+using Projexor.Features.Groups.Models;
+using Projexor.Features.Users.Enums;
+using Projexor.Features.Users.Models;
+using Projexor.Shared.Base;
 
-namespace Stokify.Features.GroupUsers.Models;
+namespace Projexor.Features.GroupUsers.Models;
 
 public sealed class GroupUser : Entity
 {

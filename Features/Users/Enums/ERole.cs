@@ -1,4 +1,4 @@
-namespace Stokify.Shared.Enums;
+namespace Projexor.Features.Users.Enums;
 
 public enum ERole
 {

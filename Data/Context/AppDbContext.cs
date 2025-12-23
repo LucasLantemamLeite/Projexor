@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using Stokify.Features.Groups.Models;
-using Stokify.Features.GroupUsers.Models;
-using Stokify.Features.Projects.Models;
-using Stokify.Features.Users.Models;
+using Projexor.Features.Groups.Models;
+using Projexor.Features.GroupUsers.Models;
+using Projexor.Features.Projects.Models;
+using Projexor.Features.Users.Models;
 
-namespace Stokify.Data.Context;
+namespace Projexor.Data.Context;
 
 public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {

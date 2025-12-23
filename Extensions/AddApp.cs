@@ -1,6 +1,6 @@
-using Stokify.Middlewares;
+using Projexor.Middlewares;
 
-namespace Stokify.Extensions;
+namespace Projexor.Extensions;
 
 public static partial class Inject
 {

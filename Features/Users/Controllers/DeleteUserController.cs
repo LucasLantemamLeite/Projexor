@@ -2,11 +2,11 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Stokify.Data.Context;
-using Stokify.Features.Users.Auth;
-using Stokify.Features.Users.Dto;
+using Projexor.Data.Context;
+using Projexor.Features.Users.Auth;
+using Projexor.Features.Users.Dto;
 
-namespace Stokify.Features.Users.Controllers;
+namespace Projexor.Features.Users.Controllers;
 
 [ApiController]
 [Route("v1/user/delete")]

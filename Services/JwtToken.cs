@@ -2,9 +2,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using Stokify.Features.Users.Models;
+using Projexor.Features.Users.Models;
 
-namespace Stokify.Services;
+namespace Projexor.Services;
 
 public static class JwtToken
 {

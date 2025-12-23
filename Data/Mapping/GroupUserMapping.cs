@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Stokify.Features.GroupUsers.Models;
+using Projexor.Features.GroupUsers.Models;
 
-namespace Stokify.Data.Mapping;
+namespace Projexor.Data.Mapping;
 
 public sealed class GroupUserMapping : IEntityTypeConfiguration<GroupUser>
 {
