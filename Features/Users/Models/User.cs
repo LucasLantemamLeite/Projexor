@@ -16,6 +16,36 @@ public sealed class User : Entity
     public ICollection<Project> Projects { get; private set; } = [];
     public ICollection<GroupUser> GroupUsers { get; private set; } = [];
 
+    public void ChangeName(string name)
+    {
+        if (Name != name)
+            Name = name;
+    }
+
+    public void ChangeEmail(string email)
+    {
+        if (Email != email)
+            Email = email;
+    }
+
+    public void ChangePhone(string phone)
+    {
+        if (Phone != phone)
+            Phone = phone;
+    }
+
+    public void ChangePassword(string password)
+    {
+        if (Password != password)
+            Password = password;
+    }
+
+    public void ChangeActive(bool active)
+    {
+        if (Active != active)
+            Active = active;
+    }
+
     public User(string name, string email, string phone, string password, bool isSuperAdmin)
     {
         Name = name;
