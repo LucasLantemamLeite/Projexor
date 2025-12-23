@@ -1,7 +1,7 @@
+using Stokify.Features.GroupUsers.Models;
 using Stokify.Features.Projects.Models;
 using Stokify.Shared.Base;
 
-// ReSharper disable once CheckNamespace
 namespace Stokify.Features.Users.Models;
 
 public sealed class User : Entity
@@ -10,18 +10,19 @@ public sealed class User : Entity
     public string Email { get; private set; } = null!;
     public string Phone { get; private set; } = null!;
     public string Password { get; private set; } = null!;
-    public bool IsSuperAdmin { get; private set; }
+    public bool IsSuperAdmin { get; private set; } = false;
     public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
     public bool Active { get; private set; } = true;
-    public List<Project> Projects { get; private set; } = [];
+    public ICollection<Project> Projects { get; private set; } = [];
+    public ICollection<GroupUser> GroupUsers { get; private set; } = [];
 
     public User(string name, string email, string phone, string password, bool isSuperAdmin)
     {
-       Name = name;
-       Email = email;
-       Phone = phone;
-       Password = password;
-       IsSuperAdmin = isSuperAdmin;
+        Name = name;
+        Email = email;
+        Phone = phone;
+        Password = password;
+        IsSuperAdmin = isSuperAdmin;
     }
 
     public User(Guid id, string name, string email, string phone, string password, bool isSuperAdmin, DateTime created, bool active) : base(id)
@@ -34,6 +35,6 @@ public sealed class User : Entity
         CreatedAt = created;
         Active = active;
     }
-    
-    private User() {}
+
+    private User() { }
 }
