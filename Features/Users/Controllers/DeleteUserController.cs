@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Projexor.Data.Context;
 using Projexor.Features.Users.Auth;
-using Projexor.Features.Users.Dto;
+using Projexor.Shared.Dto;
 
 namespace Projexor.Features.Users.Controllers;
 

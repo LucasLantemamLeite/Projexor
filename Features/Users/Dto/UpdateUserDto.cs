@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Projexor.Shared.Dto;
 
 namespace Projexor.Features.Users.Dto;
 

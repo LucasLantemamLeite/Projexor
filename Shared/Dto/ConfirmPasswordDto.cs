@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Projexor.Features.Users.Dto;
+namespace Projexor.Shared.Dto;
 
 public record ConfirmPasswordDto
 {
