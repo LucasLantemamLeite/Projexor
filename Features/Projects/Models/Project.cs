@@ -1,7 +1,9 @@
+using Stokify.Features.Projects.Enums;
 using Stokify.Shared.Base;
-using Stokify.Shared.Enums;
 
-namespace Stokify.Models;
+// ReSharper disable All
+
+namespace Stokify.Features.Projects.Models;
 
 public sealed class Project : Entity
 {

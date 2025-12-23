@@ -1,4 +1,4 @@
-namespace Stokify.Shared.Enums;
+namespace Stokify.Features.Projects.Enums;
 
 public enum EStatus
 {

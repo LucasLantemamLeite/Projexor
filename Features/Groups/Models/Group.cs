@@ -1,6 +1,7 @@
+using Stokify.Features.Projects.Models;
 using Stokify.Shared.Base;
 
-namespace Stokify.Models;
+namespace Stokify.Features.Groups.Models;
 
 public sealed class Group : Entity
 {

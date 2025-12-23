@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Stokify.Models;
+using Stokify.Features.Groups.Models;
+using Stokify.Features.GroupUsers.Models;
+using Stokify.Features.Projects.Models;
+using Stokify.Features.Users.Models;
 
 namespace Stokify.Data.Context;
 

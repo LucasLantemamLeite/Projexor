@@ -1,7 +1,7 @@
 using Stokify.Shared.Base;
 using Stokify.Shared.Enums;
 
-namespace Stokify.Models;
+namespace Stokify.Features.GroupUsers.Models;
 
 public sealed class GroupUsers : Entity
 {

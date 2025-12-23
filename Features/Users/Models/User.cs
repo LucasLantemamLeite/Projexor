@@ -1,6 +1,8 @@
+using Stokify.Features.Projects.Models;
 using Stokify.Shared.Base;
 
-namespace Stokify.Models;
+// ReSharper disable once CheckNamespace
+namespace Stokify.Features.Users.Models;
 
 public sealed class User : Entity
 {
