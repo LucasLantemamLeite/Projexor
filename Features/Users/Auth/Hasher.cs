@@ -7,7 +7,7 @@ namespace Stokify.Features.Users.Auth;
 public static class Hasher
 {
     private readonly static int Memory = 1024 * 128;
-    private readonly static int Parallelism = 4;
+    private readonly static int Parallelism = 5;
     private readonly static int Iterations = 4;
 
     public static string GenerateHash(string password)
