@@ -17,6 +17,9 @@ public sealed class UpdateUserController(AppDbContext context) : ControllerBase
     [HttpPatch]
     public async Task<IActionResult> ExecuteAsync([FromBody] UpdateUserDto updateDto, CancellationToken cancellationToken = default)
     {
+        if (updateDto.GetType().GetProperties().Where(p => p.Name != "ConfirmPassword").All(p => p.GetValue(updateDto) is null))
+            return NoContent();
+
         if (!ModelState.IsValid)
             return UnprocessableEntity(ModelState);
 
@@ -30,10 +33,15 @@ public sealed class UpdateUserController(AppDbContext context) : ControllerBase
         if (user is null || !Hasher.VerifyHash(user.Password, updateDto.ConfirmPassword))
             return Unauthorized(new { message = "Invalid credentials." });
 
+        if (updateDto.Email is not null && await context.Users.AnyAsync(x => x.Email == updateDto.Email && x.Id != userId, cancellationToken: cancellationToken))
+            return Conflict(new { message = "This email address is already registered." });
+
+        if (updateDto.Phone is not null && await context.Users.AnyAsync(x => x.Phone == updateDto.Phone && x.Id != userId, cancellationToken: cancellationToken))
+            return Conflict(new { message = "This phone number is already registered." });
+
         user.ChangeName(updateDto.Name);
         user.ChangeEmail(updateDto.Email);
         user.ChangePhone(updateDto.Phone);
-        user.ChangePassword(Hasher.GenerateHash(updateDto.Password));
         user.ChangeActive(updateDto.Active);
 
         context.Users.Update(user);
