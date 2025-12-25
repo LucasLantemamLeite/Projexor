@@ -12,6 +12,18 @@ public sealed class Group : Entity
     public ICollection<Project> Projects { get; private set; } = [];
     public ICollection<GroupUser> GroupUsers { get; private set; } = [];
 
+    public void ChangeName(string? name)
+    {
+        if (name is not null && Name != name)
+            Name = name;
+    }
+
+    public void ChangeActive(bool? active)
+    {
+        if (active is not null && Active != active)
+            Active = active.Value;
+    }
+
     public Group(string name)
     {
         Name = name;
